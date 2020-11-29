@@ -1,0 +1,12 @@
+create database facerecognition;
+use facerecognition;
+create table facefile (
+	emotion int,
+    pixels longtext,
+    Usages varchar(50)
+    );
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/fer2013.csv'
+into table facefile
+fields terminated by ',' enclosed by '"'
+lines terminated by '\n'
+ignore 1 lines;
